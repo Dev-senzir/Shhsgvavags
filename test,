@@ -1,0 +1,16 @@
+@sython.on(events.NewMessage(outgoing=True, pattern=r"\.ايدي"))
+async def _(event):
+    start = datetime.datetime.now()
+    await event.edit("waiting...")
+    end = datetime.datetime.now()
+    ms = (end - start).microseconds / 1000
+    await event.edit(f'''
+⌠  {mention}  ⌡
+           ⋰☬𝐒𝐎𝐔𝐑𝐂𝐄 𝐄𝐋𝐄𝐒𝐘𝐄𝐃☬⋱
+✺ ⧴ 𝐏𝐘𝐓𝐇𝐎𝐍 ⇢ {pyver} ✪
+✺ ⧴ 𝐓𝐄𝐋𝐄𝐓𝐇𝐎𝐍 ⇢ {telever} ✪
+✺ ⧴ 𝐔𝐏 𝐓𝐈𝐌𝐄 ⇢ {uptime} ✪
+✺ ⧴ 𝐏𝐈𝐍𝐆 ⇢ {ping} ✪
+✺ ⧴ 𝐈𝐃🜮 {userid}✪
+         ⋱☬𝐒𝐎𝐔𝐑𝐂𝐄 𝐄𝐋𝐄𝐒𝐘𝐄𝐃☬⋰
+''')
